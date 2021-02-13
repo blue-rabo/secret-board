@@ -22,7 +22,7 @@ html(lang="ja")
       //- 一般ユーザの場合
       else
           h3 #{post.id} : ID:#{post.trackingCookie}
-      p #{post.content}
+      p!= post.content
       p 投稿日時: #{post.createdAt}
       //- 管理人の場合全ての投稿者を表示
       - var isAdmin = (user === 'admin')
