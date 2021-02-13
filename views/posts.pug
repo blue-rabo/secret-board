@@ -14,11 +14,22 @@ html(lang="ja")
         button(type="submit") 投稿
     h2 投稿一覧
     each post in posts
-      p #{post.id} : ID:#{post.trackingCookie}
+      //- 管理人か否かを判定する
+      - var isPostedByAdmin = (post.postedBy === 'admin')
+      //- 管理人でない場合
+      if isPostedByAdmin
+          h3 #{post.id} 管理人★
+      //- 一般ユーザの場合
+      else
+          h3 #{post.id} : ID:#{post.trackingCookie}
       p #{post.content}
       p 投稿日時: #{post.createdAt}
+      //- 管理人の場合全ての投稿者を表示
+      - var isAdmin = (user === 'admin')
+      if isAdmin
+          p 投稿者: #{post.postedBy}
       //- 自分の投稿のみ削除ボタンが表示
-      - var isDeletable = (user === post.postedBy)
+      - var isDeletable = (user === post.postedBy || isAdmin)
       if isDeletable
           form(method="post" action="/posts?delete=1")
               input(type="hidden" name="id" value=post.id)
