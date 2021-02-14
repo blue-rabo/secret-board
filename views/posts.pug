@@ -38,7 +38,7 @@ html(lang="ja")
         //- footer 投稿日時・投稿者名・削除ボタン
         div.card-footer
           div
-            p 投稿日時: #{post.createdAt}
+            p 投稿日時: #{post.formattedCreatedAt}
             //- 管理人の場合全ての投稿者を表示
             - var isAdmin = (user === 'admin')
             if isAdmin
