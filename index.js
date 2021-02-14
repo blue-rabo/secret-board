@@ -28,6 +28,6 @@ const server = http.createServer(basic, (req, res) => {
 const port = process.env.PORT || 8000;
 // サーバーを起動
 server.listen(port, () => {
-	  // ログを出力
+	// ログを出力
     console.info(`Listening on ${port}`);
 });
