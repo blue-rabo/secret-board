@@ -34,7 +34,7 @@ html(lang="ja")
               span #{post.id} : ID:#{post.trackingCookie}
         //- body 投稿内容
         div.card-body
-          p.card-text!= post.content
+          p.card-text(style="white-space:pre; overflow:auto;") #{post.content}
         //- footer 投稿日時・投稿者名・削除ボタン
         div.card-footer
           div
