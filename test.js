@@ -10,7 +10,7 @@ const html = pug.renderFile('./views/posts.pug', {
     id: 1,
     content: '<script>alert(\'test\');</script>',
     postedBy: 'guest1',
-    trackingCookie: 1,
+    trackingCookie: '4391976947991005_0d6aeb0d6ad6bc82d29857339d6f304b3054dd5b',
     createdAt: new Date(),
     updateAt: new Date()
   }],
