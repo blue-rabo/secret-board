@@ -19,4 +19,8 @@ const html = pug.renderFile('./views/posts.pug', {
 
 // スクリプトタグがエスケープされて含まれていることをチェック
 assert(html.includes('&lt;script&gt;alert(\'test\');&lt;/script&gt;'));
+// トラッキングIDのうち表示されるのがIDのみであることをチェック
+assert(html.includes('4391976947991005'));
+// トラッキングIDからハッシュ値が表示されないことを確認
+assert(!html.includes('0d6aeb0d6ad6bc82d29857339d6f304b3054dd5b'));
 console.log('テストが正常に完了しました');
