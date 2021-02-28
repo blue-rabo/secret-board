@@ -16,7 +16,10 @@ html(lang="ja")
     h2 新規投稿
     form(method="post" action="/posts")
       div.form-group
+        //- 投稿欄
         textarea(name="content" rows="4").form-control
+        //- ワンタイムトークンを埋め込む
+        input(type="hidden" name="oneTimeToken" value=oneTimeToken)
       div.form-gtoup
         button(type="submit").btn.btn-primary 投稿
     h2 投稿一覧
